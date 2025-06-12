@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
-import plantNames from '../data/plantNames.json';
+import plantNamesRaw from '../data/plantNames.json';
 
 interface PlantNameProps {
   name: string;
@@ -8,13 +8,17 @@ interface PlantNameProps {
   onChange: (value: string) => void;
 }
 
+// Parse the new plantNames structure
+const plantNamesObj = (Array.isArray(plantNamesRaw) && plantNamesRaw.length > 0 && typeof plantNamesRaw[0] === 'object') ? plantNamesRaw[0] : {};
+const commonNames = Object.keys(plantNamesObj);
+
 const PlantName: React.FC<PlantNameProps> = ({ name, required = false, value, onChange }) => {
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
 
   useEffect(() => {
     if (value.length > 0) {
-      const filtered = (plantNames as string[]).filter(pn =>
+      const filtered = commonNames.filter(pn =>
         pn.toLowerCase().includes(value.toLowerCase())
       );
       setSuggestions(filtered.slice(0, 6));

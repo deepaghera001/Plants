@@ -1,23 +1,77 @@
 [
-  "Monstera Deliciosa",
-  "Ficus lyrata",
-  "Aloe Vera",
-  "Sansevieria trifasciata",
-  "Epipremnum aureum",
-  "Dracaena fragrans",
-  "Spathiphyllum wallisii",
-  "Chlorophytum comosum",
-  "Zamioculcas zamiifolia",
-  "Calathea orbifolia",
-  "Pilea peperomioides",
-  "Philodendron hederaceum",
-  "Cactus",
-  "Basil",
-  "Rose",
-  "Lavender",
-  "Mint",
-  "Tomato",
-  "Snake Plant",
-  "Peace Lily",
-  "Spider Plant"
+ {
+  "Monstera Deliciosa": {
+    "commonName": "Monstera Deliciosa",
+    "scientificName": "Monstera deliciosa"
+  },
+  "Fiddle Leaf Fig": {
+    "commonName": "Fiddle Leaf Fig",
+    "scientificName": "Ficus lyrata"
+  },
+  "Aloe Vera": {
+    "commonName": "Aloe Vera",
+    "scientificName": "Aloe vera"
+  },
+  "Snake Plant": {
+    "commonName": "Snake Plant",
+    "scientificName": "Sansevieria trifasciata"
+  },
+  "Golden Pothos": {
+    "commonName": "Golden Pothos",
+    "scientificName": "Epipremnum aureum"
+  },
+  "Corn Plant": {
+    "commonName": "Corn Plant",
+    "scientificName": "Dracaena fragrans"
+  },
+  "Peace Lily": {
+    "commonName": "Peace Lily",
+    "scientificName": "Spathiphyllum wallisii"
+  },
+  "Spider Plant": {
+    "commonName": "Spider Plant",
+    "scientificName": "Chlorophytum comosum"
+  },
+  "ZZ Plant": {
+    "commonName": "ZZ Plant",
+    "scientificName": "Zamioculcas zamiifolia"
+  },
+  "Calathea Orbifolia": {
+    "commonName": "Calathea Orbifolia",
+    "scientificName": "Calathea orbifolia"
+  },
+  "Chinese Money Plant": {
+    "commonName": "Chinese Money Plant",
+    "scientificName": "Pilea peperomioides"
+  },
+  "Heartleaf Philodendron": {
+    "commonName": "Heartleaf Philodendron",
+    "scientificName": "Philodendron hederaceum"
+  },
+  "Cactus": {
+    "commonName": "Cactus",
+    "scientificName": "Cactaceae"
+  },
+  "Basil": {
+    "commonName": "Basil",
+    "scientificName": "Ocimum basilicum"
+  },
+  "Rose": {
+    "commonName": "Rose",
+    "scientificName": "Rosa"
+  },
+  "Lavender": {
+    "commonName": "Lavender",
+    "scientificName": "Lavandula"
+  },
+  "Mint": {
+    "commonName": "Mint",
+    "scientificName": "Mentha"
+  },
+  "Tomato": {
+    "commonName": "Tomato",
+    "scientificName": "Solanum lycopersicum"
+  }
+}
+
 ]
