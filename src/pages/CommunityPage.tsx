@@ -1,15 +1,19 @@
-import React, { useState, useMemo } from 'react';
-import { mockPosts } from '../data/mockData';
-import PostCard from '../components/community/PostCard';
+import { Award, MessageCircle, Plus, Sparkles, TrendingUp, Users } from 'lucide-react';
+import { useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import CommunityFilters from '../components/community/CommunityFilters';
 import CommunityStats from '../components/community/CommunityStats';
-import { MessageCircle, Users, TrendingUp, Award, Sparkles, Plus } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import PostCard from '../components/community/PostCard';
+import { mockPosts } from '../data/mockData';
+import { setActiveFilter, setSearchQuery, setSortBy } from '../slices/communitySlice';
+import type { AppDispatch, RootState } from '../store';
 
 export default function CommunityPage() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [activeFilter, setActiveFilter] = useState('all');
-  const [sortBy, setSortBy] = useState('recent');
+  const dispatch = useDispatch<AppDispatch>();
+  const searchQuery = useSelector((state: RootState) => state.community.searchQuery);
+  const activeFilter = useSelector((state: RootState) => state.community.activeFilter);
+  const sortBy = useSelector((state: RootState) => state.community.sortBy);
 
   const filteredAndSortedPosts = useMemo(() => {
     let filtered = mockPosts.filter(post => {
@@ -111,7 +115,7 @@ export default function CommunityPage() {
           {postTypes.map((type) => (
             <button
               key={type.id}
-              onClick={() => setActiveFilter(type.id)}
+              onClick={() => dispatch(setActiveFilter(type.id))}
               className={`p-6 rounded-xl border-2 transition-all duration-200 hover:scale-105 ${
                 activeFilter === type.id
                   ? 'border-emerald-500 bg-emerald-50'
@@ -132,11 +136,11 @@ export default function CommunityPage() {
 
         <CommunityFilters
           searchQuery={searchQuery}
-          onSearchChange={setSearchQuery}
+          onSearchChange={q => dispatch(setSearchQuery(q))}
           activeFilter={activeFilter}
-          onFilterChange={setActiveFilter}
+          onFilterChange={f => dispatch(setActiveFilter(f))}
           sortBy={sortBy}
-          onSortChange={setSortBy}
+          onSortChange={s => dispatch(setSortBy(s))}
           totalResults={filteredAndSortedPosts.length}
         />
 
