@@ -1,6 +1,7 @@
 import { Plus, Upload, X } from 'lucide-react';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import PlantName from '../PlantName';
 
 export default function AddPlantForm() {
   const navigate = useNavigate();
@@ -81,7 +82,7 @@ export default function AddPlantForm() {
         <h2 className="text-xl font-semibold text-gray-900 mb-4">Basic Information</h2>
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Plant Name *</label>
+            <PlantName name="Plant Name" required />
             <input
               type="text"
               name="name"
