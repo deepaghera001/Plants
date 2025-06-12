@@ -1,6 +1,6 @@
+import { Plus, Upload, X } from 'lucide-react';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Upload, X, Plus } from 'lucide-react';
 
 export default function AddPlantForm() {
   const navigate = useNavigate();
@@ -203,17 +203,18 @@ export default function AddPlantForm() {
       {/* Growth Information */}
       <div>
         <h2 className="text-xl font-semibold text-gray-900 mb-4">Growth Information</h2>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Temperature Range */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Temperature Range (°F)</label>
-            <div className="flex space-x-2">
+            <div className="flex flex-row gap-2 flex-wrap">
               <input
                 type="number"
                 name="temperatureMin"
                 value={formData.temperatureMin}
                 onChange={handleInputChange}
                 placeholder="Min"
-                className="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50"
+                className="w-1/3 min-w-0 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50"
               />
               <span className="self-center text-gray-500">to</span>
               <input
@@ -222,20 +223,21 @@ export default function AddPlantForm() {
                 value={formData.temperatureMax}
                 onChange={handleInputChange}
                 placeholder="Max"
-                className="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50"
+                className="w-1/3 min-w-0 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50"
               />
             </div>
           </div>
+          {/* Growth Time */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Growth Time</label>
-            <div className="flex space-x-2">
+            <div className="flex flex-row gap-2 flex-wrap items-center">
               <input
                 type="number"
                 name="growthTimeMin"
                 value={formData.growthTimeMin}
                 onChange={handleInputChange}
                 placeholder="Min"
-                className="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50"
+                className="w-1/4 min-w-0 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50"
               />
               <span className="self-center text-gray-500">to</span>
               <input
@@ -244,13 +246,13 @@ export default function AddPlantForm() {
                 value={formData.growthTimeMax}
                 onChange={handleInputChange}
                 placeholder="Max"
-                className="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50"
+                className="w-1/4 min-w-0 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50"
               />
               <select
                 name="growthTimeUnit"
                 value={formData.growthTimeUnit}
                 onChange={handleInputChange}
-                className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50"
+                className="w-1/3 min-w-0 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50"
               >
                 <option value="days">Days</option>
                 <option value="weeks">Weeks</option>
