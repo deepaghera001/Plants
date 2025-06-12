@@ -82,15 +82,11 @@ export default function AddPlantForm() {
         <h2 className="text-xl font-semibold text-gray-900 mb-4">Basic Information</h2>
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <PlantName name="Plant Name" required />
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
+            <PlantName
+              name="Plant Name"
               required
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50"
-              placeholder="e.g., Monstera Deliciosa"
+              value={formData.name}
+              onChange={val => setFormData(prev => ({ ...prev, name: val }))}
             />
           </div>
           <div>
